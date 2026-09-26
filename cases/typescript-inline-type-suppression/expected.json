@@ -1,0 +1,10 @@
+{
+  "exit": 1,
+  "status": "fail",
+  "findings": [
+    {
+      "rule": "SUPPRESS001",
+      "file": "typescript/src/pages/suppressed.ts"
+    }
+  ]
+}

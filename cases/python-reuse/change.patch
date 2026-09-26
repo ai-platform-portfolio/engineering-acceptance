@@ -1,0 +1,10 @@
+diff --git a/python/domain/reuse.py b/python/domain/reuse.py
+new file mode 100644
+--- /dev/null
++++ b/python/domain/reuse.py
+@@ -0,0 +1,5 @@
++from domain.delivery import destination_key
++
++
++def feed_key(client: str, name: str) -> str:
++    return destination_key(client, name)

@@ -1,0 +1,10 @@
+{
+  "exit": 1,
+  "status": "fail",
+  "findings": [
+    {
+      "rule": "SCOPE001",
+      "file": "unexpected/new.py"
+    }
+  ]
+}

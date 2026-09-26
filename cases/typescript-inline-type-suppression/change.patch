@@ -1,0 +1,7 @@
+diff --git a/typescript/src/pages/suppressed.ts b/typescript/src/pages/suppressed.ts
+new file mode 100644
+--- /dev/null
++++ b/typescript/src/pages/suppressed.ts
+@@ -0,0 +1,2 @@
++// @ts-nocheck
++export const port: number = "sftp";

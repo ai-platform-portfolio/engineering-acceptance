@@ -1,0 +1,7 @@
+diff --git a/python/domain/suppressed.py b/python/domain/suppressed.py
+new file mode 100644
+--- /dev/null
++++ b/python/domain/suppressed.py
+@@ -0,0 +1,2 @@
++def port() -> int:
++    return "sftp"  # type: ignore[return-value]

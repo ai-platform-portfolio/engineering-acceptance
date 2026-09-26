@@ -1,0 +1,14 @@
+version: 1
+terraform:
+  roots: [gate-example/terraform]
+  profile: consumer
+  approved_repositories: [ai-platform-portfolio/terraform-modules]
+comments:
+  max_lines: 5
+  max_characters: 400
+duplication:
+  min_tokens: 50
+  min_lines: 5
+protected_paths: [gate-example/engineering.yaml, '.github/*']
+exclude: []
+exceptions: []

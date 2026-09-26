@@ -1,0 +1,11 @@
+diff --git a/terraform/comment.tf b/terraform/comment.tf
+new file mode 100644
+--- /dev/null
++++ b/terraform/comment.tf
+@@ -0,0 +1,6 @@
++# Detailed explanation line 1.
++# Detailed explanation line 2.
++# Detailed explanation line 3.
++# Detailed explanation line 4.
++# Detailed explanation line 5.
++# Detailed explanation line 6.

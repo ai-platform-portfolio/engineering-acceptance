@@ -1,0 +1,8 @@
+diff --git a/terraform/unapproved.tf b/terraform/unapproved.tf
+new file mode 100644
+--- /dev/null
++++ b/terraform/unapproved.tf
+@@ -0,0 +1,3 @@
++module "bad" {
++  source = "git::https://github.com/someone/infra.git//modules/storage?ref=1111111111111111111111111111111111111111"
++}

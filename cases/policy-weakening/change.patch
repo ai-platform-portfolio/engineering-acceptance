@@ -1,0 +1,8 @@
+diff --git a/engineering.yaml b/engineering.yaml
+--- a/engineering.yaml
++++ b/engineering.yaml
+@@ -22,3 +22,3 @@
+ comments:
+-  max_lines: 5
++  max_lines: 500
+   max_characters: 400

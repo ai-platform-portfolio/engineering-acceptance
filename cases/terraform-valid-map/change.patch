@@ -1,0 +1,8 @@
+diff --git a/terraform/environment.auto.tfvars b/terraform/environment.auto.tfvars
+new file mode 100644
+--- /dev/null
++++ b/terraform/environment.auto.tfvars
+@@ -0,0 +1,3 @@
++workloads = {
++  processor = { namespace = "ingestion", sa_name = "processor" }
++}

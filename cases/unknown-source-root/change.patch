@@ -1,0 +1,6 @@
+diff --git a/unexpected/new.py b/unexpected/new.py
+new file mode 100644
+--- /dev/null
++++ b/unexpected/new.py
+@@ -0,0 +1,1 @@
++VALUE = 1

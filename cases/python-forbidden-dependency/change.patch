@@ -1,0 +1,10 @@
+diff --git a/python/domain/bad.py b/python/domain/bad.py
+new file mode 100644
+--- /dev/null
++++ b/python/domain/bad.py
+@@ -0,0 +1,5 @@
++from adapters.storage import object_uri
++
++
++def delivery_uri(bucket: str, key: str) -> str:
++    return object_uri(bucket, key)

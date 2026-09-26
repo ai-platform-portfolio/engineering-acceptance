@@ -1,0 +1,12 @@
+diff --git a/python/domain/suppressed.py b/python/domain/suppressed.py
+new file mode 100644
+--- /dev/null
++++ b/python/domain/suppressed.py
+@@ -0,0 +1,7 @@
++# hygiene:allow
++# Explanation line 1.
++# Explanation line 2.
++# Explanation line 3.
++# Explanation line 4.
++# Explanation line 5.
++# Explanation line 6.

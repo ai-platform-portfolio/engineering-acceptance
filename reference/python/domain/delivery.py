@@ -1,0 +1,10 @@
+def destination_key(client: str, filename: str) -> str:
+    client = client.strip().lower()
+    filename = filename.strip()
+    if not client:
+        raise ValueError("client is required")
+    if not filename or "/" in filename or "\\" in filename:
+        raise ValueError("filename must be a single path component")
+    if filename in {".", ".."}:
+        raise ValueError("relative path components are not allowed")
+    return f"{client}/{filename}"

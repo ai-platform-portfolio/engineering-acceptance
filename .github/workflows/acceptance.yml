@@ -1,0 +1,49 @@
+name: Engineering acceptance
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  acceptance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - id: standards
+        uses: ai-platform-portfolio/engineering-standards@8912666e66fd89ea451b2f616ca4a86c70908823
+      - name: Exercise valid and flawed changes
+        env:
+          CHECKER: ${{ steps.standards.outputs.checker }}
+          TOOLS: ${{ steps.standards.outputs.tools }}
+        run: python scripts/run_acceptance.py --checker "$CHECKER" --tools "$TOOLS"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: acceptance-results
+          path: reports/acceptance.json
+          if-no-files-found: error
+  quality:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - id: standards
+        uses: ai-platform-portfolio/engineering-standards@8912666e66fd89ea451b2f616ca4a86c70908823
+      - name: Check the PR against the trusted base policy
+        env:
+          CHECKER: ${{ steps.standards.outputs.checker }}
+          TOOLS: ${{ steps.standards.outputs.tools }}
+          BASE: ${{ github.event.pull_request.base.sha }}
+        run: |
+          git show "$BASE:gate-example/engineering.yaml" > "$RUNNER_TEMP/engineering.yaml"
+          "$CHECKER" --base "$BASE" --policy "$RUNNER_TEMP/engineering.yaml" --tools "$TOOLS" --report reports/quality.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: quality-results
+          path: reports/quality.json
+          if-no-files-found: error

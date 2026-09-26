@@ -1,0 +1,7 @@
+diff --git a/python/domain/invalid.py b/python/domain/invalid.py
+new file mode 100644
+--- /dev/null
++++ b/python/domain/invalid.py
+@@ -0,0 +1,2 @@
++def port() -> int:
++    return "sftp"

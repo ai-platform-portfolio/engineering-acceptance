@@ -1,0 +1,8 @@
+diff --git a/terraform/raw.tf b/terraform/raw.tf
+new file mode 100644
+--- /dev/null
++++ b/terraform/raw.tf
+@@ -0,0 +1,3 @@
++resource "terraform_data" "bad" {
++  input = "inline resource"
++}

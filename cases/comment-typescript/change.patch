@@ -1,0 +1,11 @@
+diff --git a/typescript/src/pages/comment.ts b/typescript/src/pages/comment.ts
+new file mode 100644
+--- /dev/null
++++ b/typescript/src/pages/comment.ts
+@@ -0,0 +1,6 @@
++// Detailed explanation line 1.
++// Detailed explanation line 2.
++// Detailed explanation line 3.
++// Detailed explanation line 4.
++// Detailed explanation line 5.
++// Detailed explanation line 6.

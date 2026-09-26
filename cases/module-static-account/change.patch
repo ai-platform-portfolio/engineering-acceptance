@@ -1,0 +1,8 @@
+diff --git a/terraform/account.tf b/terraform/account.tf
+new file mode 100644
+--- /dev/null
++++ b/terraform/account.tf
+@@ -0,0 +1,3 @@
++resource "azurerm_user_assigned_identity" "copy" {
++  name = "processor"
++}

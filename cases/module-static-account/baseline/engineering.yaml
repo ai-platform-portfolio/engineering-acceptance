@@ -1,0 +1,18 @@
+version: 1
+terraform:
+  roots: [terraform]
+  profile: module
+  approved_repositories: [ai-platform-portfolio/terraform-modules]
+  collections:
+    - files: terraform/*
+      type: azurerm_user_assigned_identity
+      expression: var.workloads
+comments:
+  max_lines: 5
+  max_characters: 400
+duplication:
+  min_tokens: 50
+  min_lines: 5
+exclude: [python/*, typescript/*]
+protected_paths: [engineering.yaml]
+exceptions: []

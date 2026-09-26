@@ -1,0 +1,10 @@
+{
+  "exit": 1,
+  "status": "fail",
+  "findings": [
+    {
+      "rule": "DEP001",
+      "file": "python/domain/bad.py"
+    }
+  ]
+}

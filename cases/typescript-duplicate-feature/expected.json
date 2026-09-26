@@ -1,0 +1,11 @@
+{
+  "exit": 1,
+  "status": "fail",
+  "findings": [
+    {
+      "rule": "DUP001",
+      "file": "typescript/src/features/data-sources/credentials.ts",
+      "related_file": "typescript/src/features/source-feeds/credentials.ts"
+    }
+  ]
+}

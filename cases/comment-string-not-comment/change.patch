@@ -1,0 +1,12 @@
+diff --git a/python/domain/text.py b/python/domain/text.py
+new file mode 100644
+--- /dev/null
++++ b/python/domain/text.py
+@@ -0,0 +1,7 @@
++VALUE = """Line one
++Line two
++Line three
++Line four
++Line five
++Line six
++"""

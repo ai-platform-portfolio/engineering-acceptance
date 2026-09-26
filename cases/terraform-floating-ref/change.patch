@@ -1,0 +1,8 @@
+diff --git a/terraform/floating.tf b/terraform/floating.tf
+new file mode 100644
+--- /dev/null
++++ b/terraform/floating.tf
+@@ -0,0 +1,3 @@
++module "bad" {
++  source = "git::https://github.com/ai-platform-portfolio/terraform-modules.git//modules/storage?ref=main"
++}

@@ -1,0 +1,6 @@
+diff --git a/terraform/comment.tf b/terraform/comment.tf
+new file mode 100644
+--- /dev/null
++++ b/terraform/comment.tf
+@@ -0,0 +1,1 @@
++# Preserve stable map keys to avoid changing resource addresses.

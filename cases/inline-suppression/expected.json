@@ -1,0 +1,10 @@
+{
+  "exit": 1,
+  "status": "fail",
+  "findings": [
+    {
+      "rule": "COMMENT001",
+      "file": "python/domain/suppressed.py"
+    }
+  ]
+}

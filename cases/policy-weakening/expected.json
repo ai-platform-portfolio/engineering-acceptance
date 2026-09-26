@@ -1,0 +1,10 @@
+{
+  "exit": 1,
+  "status": "fail",
+  "findings": [
+    {
+      "rule": "POLICY001",
+      "file": "engineering.yaml"
+    }
+  ]
+}
