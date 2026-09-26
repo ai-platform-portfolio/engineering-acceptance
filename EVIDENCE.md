@@ -21,9 +21,10 @@ file. The corrected policy supplies its own configuration and scans the explicit
 source list. Ruff also ignores consumer gitignore exclusions. The local regression
 passed after this correction.
 
-## Enforcement limitation
+## Merge enforcement
 
-The organisation's private repositories are on GitHub Free. GitHub returned HTTP
-403 when branch protection was queried. These jobs demonstrate detection and
-correction, **not blocked merging**. CODEOWNERS is present, but required checks
-and required owner approvals need supported repository protection settings.
+The original runs above occurred while this repository was private on GitHub
+Free and its protection API returned HTTP 403. They prove detection and
+correction, not blocked merging at that time. Current visibility and merge
+controls are tracked separately in the audited
+[portfolio governance status](https://github.com/ai-platform-portfolio/engineering-standards#ci-and-enforcement-status).

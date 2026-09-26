@@ -24,6 +24,8 @@ The `gate-example` directory is a standalone consumer for the GitHub PR exercise
 Its check uses a pinned standards action and the base revision's policy.
 See [evidence](EVIDENCE.md) for the failed and corrected job links.
 
-GitHub Free currently prevents branch protection on these private repos. Workflow
-results can demonstrate detection, but blocked merging cannot be demonstrated
-until the organisation enables that capability. No cloud credentials are used.
+Repository visibility and merge controls are recorded in the automatically
+checked [portfolio governance status](https://github.com/ai-platform-portfolio/engineering-standards#ci-and-enforcement-status).
+That read-only audit detects drift between the documented expectations and live
+GitHub settings. Acceptance runs demonstrate the checker behaviour; repository
+rules provide the separate merge gate. No cloud credentials are used by this suite.
