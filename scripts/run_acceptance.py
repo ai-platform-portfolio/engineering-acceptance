@@ -44,7 +44,7 @@ def main():
             tree = run("git", "write-tree", cwd=root).stdout.strip()
             patch = case / "change.patch"
             if patch.exists():
-                run("git", "apply", str(patch), cwd=root)
+                run("git", "apply", "--index", str(patch), cwd=root)
             report = root / "findings.json"
             command = [
                 args.checker,

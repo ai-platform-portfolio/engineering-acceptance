@@ -1,0 +1,21 @@
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+--- /dev/null
++++ b/.gitignore
+@@ -0,0 +1,1 @@
++python/domain/ignored.py
+diff --git a/python/domain/ignored.py b/python/domain/ignored.py
+new file mode 100644
+--- /dev/null
++++ b/python/domain/ignored.py
+@@ -0,0 +1,10 @@
++def destination_key(client: str, filename: str) -> str:
++    client = client.strip().lower()
++    filename = filename.strip()
++    if not client:
++        raise ValueError("client is required")
++    if not filename or "/" in filename or "\\" in filename:
++        raise ValueError("filename must be a single path component")
++    if filename in {".", ".."}:
++        raise ValueError("relative path components are not allowed")
++    return f"{client}/{filename}"

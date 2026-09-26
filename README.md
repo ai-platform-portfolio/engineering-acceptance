@@ -22,6 +22,7 @@ failures. It does not claim to recognise all semantic duplication.
 
 The `gate-example` directory is a standalone consumer for the GitHub PR exercise.
 Its check uses a pinned standards action and the base revision's policy.
+See [evidence](EVIDENCE.md) for the failed and corrected job links.
 
 GitHub Free currently prevents branch protection on these private repos. Workflow
 results can demonstrate detection, but blocked merging cannot be demonstrated

@@ -1,0 +1,11 @@
+{
+  "exit": 1,
+  "status": "fail",
+  "findings": [
+    {
+      "rule": "DUP001",
+      "file": "python/domain/ignored.py",
+      "related_file": "python/domain/delivery.py"
+    }
+  ]
+}
