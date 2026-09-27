@@ -29,5 +29,5 @@ exclude: [python/generated/*]
 exceptions:
   - rule: COMMENT001
     file: python/domain/approved.py
-    owner: michaela-links
+    owner: michaelalinks
     reason: Acceptance fixture for an explicitly reviewed comment exception.
