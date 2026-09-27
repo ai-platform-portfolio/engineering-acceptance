@@ -22,6 +22,9 @@ failures. It does not claim to recognise all semantic duplication.
 
 The `gate-example` directory is a standalone consumer for the GitHub PR exercise.
 Its check uses a pinned standards action and the base revision's policy.
+Protected files can change only after a base CODEOWNER approves the exact PR
+head. The review workflow reruns the original quality job, preserving one check.
+The checker verifies that approval before adopting the proposed policy.
 See [evidence](EVIDENCE.md) for the failed and corrected job links.
 
 Repository visibility and merge controls are recorded in the automatically

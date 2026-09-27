@@ -1,0 +1,33 @@
+name: Refresh reviewed policy
+on:
+  pull_request_review:
+    types: [submitted, dismissed]
+permissions:
+  contents: read
+concurrency:
+  group: policy-review-${{ github.event.pull_request.number }}
+  cancel-in-progress: false
+jobs:
+  refresh:
+    if: >-
+      github.event.action == 'dismissed' ||
+      github.event.review.state == 'approved' ||
+      github.event.review.state == 'changes_requested'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pull-requests: read
+      actions: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: ai-platform-portfolio/ops-shared
+          ref: 4cdff75db4e0fa6da200e39d370af4f7f825d3b7
+          persist-credentials: false
+      - name: Refresh the original PR quality result
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REVIEW_WORKFLOW: acceptance.yml
+          REVIEW_JOB: quality
+        run: python3 scripts/recheck_review.py

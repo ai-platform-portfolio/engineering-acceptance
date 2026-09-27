@@ -5,6 +5,7 @@ on:
   pull_request:
 permissions:
   contents: read
+  pull-requests: read
 jobs:
   acceptance:
     runs-on: ubuntu-latest
@@ -14,7 +15,7 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - id: standards
-        uses: ai-platform-portfolio/engineering-standards@a52ded96b6705a15a7d092cbfad2c056a13253bf
+        uses: ai-platform-portfolio/engineering-standards@86911aeee0c1f9e85a437f820f66ac466be3ae5e
       - name: Exercise valid and flawed changes
         env:
           CHECKER: ${{ steps.standards.outputs.checker }}
@@ -33,17 +34,18 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha }}
           persist-credentials: false
       - id: standards
-        uses: ai-platform-portfolio/engineering-standards@a52ded96b6705a15a7d092cbfad2c056a13253bf
+        uses: ai-platform-portfolio/engineering-standards@86911aeee0c1f9e85a437f820f66ac466be3ae5e
       - name: Check the PR against the trusted base policy
         env:
           CHECKER: ${{ steps.standards.outputs.checker }}
           TOOLS: ${{ steps.standards.outputs.tools }}
           BASE: ${{ github.event.pull_request.base.sha }}
-        run: |
-          git show "$BASE:gate-example/engineering.yaml" > "$RUNNER_TEMP/engineering.yaml"
-          "$CHECKER" --base "$BASE" --policy "$RUNNER_TEMP/engineering.yaml" --tools "$TOOLS" --report reports/quality.json
+          PR: ${{ github.event.pull_request.number }}
+          GH_TOKEN: ${{ github.token }}
+        run: '"$CHECKER" --base "$BASE" --policy-file gate-example/engineering.yaml --github-pr "$PR" --tools "$TOOLS" --report reports/quality.json'
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
