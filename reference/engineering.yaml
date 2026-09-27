@@ -29,5 +29,5 @@ exclude: [python/generated/*]
 exceptions:
   - rule: COMMENT001
     file: python/domain/approved.py
-    owner: michaelalinks
+    owner: ai-platform-portfolio/platform
     reason: Acceptance fixture for an explicitly reviewed comment exception.
