@@ -14,7 +14,7 @@ manage signing keys.
 
 The reference Terraform source is a static policy fixture. Acceptance does not
 initialise or apply its resources. Actual module configuration validation and
-mocked provider tests run in `terraform-modules`.
+mocked provider tests run in `platform-iac`.
 
 The suite checks duplication against unchanged source, correct reuse, dependency
 boundaries, type errors, comment budgets, approved Terraform sources and tool

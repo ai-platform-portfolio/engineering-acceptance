@@ -2,7 +2,7 @@ version: 1
 terraform:
   roots: [terraform]
   profile: consumer
-  approved_repositories: [ai-platform-portfolio/terraform-modules]
+  approved_repositories: [ai-platform-portfolio/platform-iac]
 python:
   roots: [python]
   boundaries:
