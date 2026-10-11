@@ -21,7 +21,11 @@ boundaries, type errors, comment budgets, approved Terraform sources and tool
 failures. It does not claim to recognise all semantic duplication.
 
 The `gate-example` directory is a standalone consumer for the GitHub PR exercise.
-Its check uses a pinned standards action and the base revision's policy.
+Its check uses a pinned standards action and validates the candidate policy.
+Protected policy and workflow changes are recorded for native PR review; code
+findings and tool failures still fail the check. The deliberately valid and flawed
+`reference` and `cases` fixtures are excluded from this example gate and exercised
+separately by the acceptance job.
 See [evidence](EVIDENCE.md) for the failed and corrected job links.
 
 Repository visibility and merge controls are recorded in the automatically

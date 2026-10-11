@@ -10,5 +10,5 @@ duplication:
   min_tokens: 50
   min_lines: 5
 protected_paths: [gate-example/engineering.yaml, '.github/*']
-exclude: []
+exclude: [reference/**, cases/**]
 exceptions: []

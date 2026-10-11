@@ -14,7 +14,7 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - id: standards
-        uses: ai-platform-portfolio/engineering-standards@a52ded96b6705a15a7d092cbfad2c056a13253bf
+        uses: ai-platform-portfolio/engineering-standards@41b510c4b25d14f92fb3ea16a59d1d2e680f4096
       - name: Exercise valid and flawed changes
         env:
           CHECKER: ${{ steps.standards.outputs.checker }}
@@ -35,15 +35,14 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - id: standards
-        uses: ai-platform-portfolio/engineering-standards@a52ded96b6705a15a7d092cbfad2c056a13253bf
-      - name: Check the PR against the trusted base policy
+        uses: ai-platform-portfolio/engineering-standards@41b510c4b25d14f92fb3ea16a59d1d2e680f4096
+      - name: Validate the candidate policy and report protected changes
         env:
           CHECKER: ${{ steps.standards.outputs.checker }}
           TOOLS: ${{ steps.standards.outputs.tools }}
           BASE: ${{ github.event.pull_request.base.sha }}
         run: |
-          git show "$BASE:gate-example/engineering.yaml" > "$RUNNER_TEMP/engineering.yaml"
-          "$CHECKER" --base "$BASE" --policy "$RUNNER_TEMP/engineering.yaml" --tools "$TOOLS" --report reports/quality.json
+          "$CHECKER" --base "$BASE" --policy-file gate-example/engineering.yaml --policy-mode candidate --tools "$TOOLS" --report reports/quality.json
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
